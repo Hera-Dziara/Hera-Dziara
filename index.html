@@ -5,104 +5,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HERA DZIARA | Tattoo Ink</title>
+
 <style>
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
-  background: #090909;
-  color: #fff;
+  background: #080808;
+  color: #eee;
   font-family: Arial, sans-serif;
 }
+
 header {
   min-height: 90vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 30px;
-  background: radial-gradient(ellipse, #351010, #090909 65%);
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.88)),
+    url('hero.jpg.jpg') center/cover no-repeat;
 }
+
 h1 {
-  font-size: clamp(48px, 10vw, 100px);
-  letter-spacing: 8px;
+  color: #c90025;
+  font-size: clamp(42px, 9vw, 95px);
+  letter-spacing: 5px;
   margin: 0;
-  color: #d71920;
-  text-shadow: 0 0 25px #8d0000;
+  text-shadow: 0 0 25px #8b001b;
 }
+
 header p {
-  letter-spacing: 6px;
-  color: #ddd;
+  letter-spacing: 5px;
+  font-size: 18px;
+  color: white;
 }
+
 nav {
-  padding: 22px;
+  background: #111;
+  padding: 20px;
   text-align: center;
-  border-bottom: 1px solid #581010;
+  border-bottom: 1px solid #8b001b;
 }
+
 nav a {
   color: white;
   text-decoration: none;
-  margin: 12px;
-  letter-spacing: 2px;
+  margin: 0 15px;
+  font-weight: bold;
 }
+
+nav a:hover { color: #e00030; }
+
 section {
-  padding: 75px 20px;
-  text-align: center;
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
+
 h2 {
-  color: #e01b24;
-  letter-spacing: 4px;
+  color: #d0002b;
+  text-align: center;
+  letter-spacing: 3px;
 }
+
+.intro {
+  text-align: center;
+  color: #bbb;
+  line-height: 1.8;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  max-width: 1000px;
-  margin: 30px auto;
+  gap: 20px;
 }
+
 .gallery div {
-  min-height: 260px;
-  border: 1px solid #671116;
-  background: #171313;
+  min-height: 230px;
+  border: 1px solid #590015;
+  background: #151515;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
+  color: #777;
 }
-footer {
-  padding: 30px;
+
+.contact {
   text-align: center;
-  background: #151010;
-  color: #aaa;
+  line-height: 2;
 }
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  border: 1px solid #d71920;
-  color: white;
+
+.contact a {
+  color: #e00030;
   text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #111;
+  color: #777;
+  border-top: 1px solid #590015;
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <p>TATTOO ARTIST</p>
-  <h1>HERA DZIARA</h1>
-  <p>TATTOO INK</p>
-  <a class="button" href="#portfolio">ZOBACZ MOJE PRACE</a>
+  <div>
+    <h1>HERA DZIARA</h1>
+    <p>TATTOO INK</p>
+  </div>
 </header>
 
 <nav>
-  <a href="#portfolio">PORTFOLIO</a>
-  <a href="#about">O MNIE</a>
-  <a href="#contact">KONTAKT</a>
+  <a href="#onas">O mnie</a>
+  <a href="#galeria">Portfolio</a>
+  <a href="#kontakt">Kontakt</a>
 </nav>
 
-<section id="portfolio">
-  <h2>MOJE PRACE</h2>
-  <p>Każdy tatuaż ma swoją historię.</p>
+<section id="onas">
+  <h2>MOJA PASJA. TWOJA HISTORIA.</h2>
+  <p class="intro">
+    Witaj w świecie HERA DZIARA TATTOO INK.
+    Tutaj sztuka spotyka się z pasją, a każdy tatuaż
+    opowiada własną historię.
+  </p>
+</section>
+
+<section id="galeria">
+  <h2>PORTFOLIO</h2>
   <div class="gallery">
     <div>Twoja praca nr 1</div>
     <div>Twoja praca nr 2</div>
@@ -110,20 +145,17 @@ footer {
   </div>
 </section>
 
-<section id="about">
-  <h2>O MNIE</h2>
-  <p>Pasja, precyzja i sztuka zapisana na skórze.</p>
-  <p>Witaj w świecie HERA DZIARA TATTOO INK.</p>
-</section>
-
-<section id="contact">
+<section id="kontakt">
   <h2>SKONTAKTUJ SIĘ</h2>
-  <p>Masz pomysł na tatuaż? Napisz do mnie!</p>
-  <a class="button" href="https://www.instagram.com/">INSTAGRAM</a>
+  <div class="contact">
+    <p>HERA DZIARA TATTOO INK</p>
+    <p>Zapraszam do kontaktu w sprawie tatuaży.</p>
+    <p>Znajdziesz mnie również w mediach społecznościowych.</p>
+  </div>
 </section>
 
 <footer>
-  HERA DZIARA TATTOO INK © 2026
+  © 2026 HERA DZIARA TATTOO INK
 </footer>
 
 </body>
