@@ -243,6 +243,8 @@ footer {
   box-shadow: 0 0 30px rgba(192, 0, 43, 0.5);
 }
 
+/* STRZALKI W GALERII */
+
 .strzalka {
   position: absolute;
   top: 50%;
@@ -266,26 +268,15 @@ footer {
   left: 20px;
 }
 
+.strzalka.prawa {
+  right: 20px;
+}
+
 .zamknij {
   z-index: 10001;
   background: none;
   border: none;
 }
-  #intro-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 20000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 25px;
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)),
-    url('https://raw.githubusercontent.com/Hera-Dziara/Hera-Dziara/main/hero.jpg.jpg') center/cover no-repeat;
-  transition: opacity 1s ease, visibility 1s ease;
-}
-
 #intro-screen.ukryty {
   opacity: 0;
   visibility: hidden;
