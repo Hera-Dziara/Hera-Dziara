@@ -155,6 +155,33 @@ footer {
   box-shadow: 0 0 30px rgba(224, 0, 48, 0.8);
   background: linear-gradient(135deg, #c0002b, #ed1745);
 }
+  #lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#duzeZdjecie {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 2px solid #8b001b;
+  box-shadow: 0 0 30px rgba(192, 0, 43, 0.5);
+}
+
+.zamknij {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -214,6 +241,24 @@ footer {
 <footer>
   © 2026 HERA DZIARA TATTOO INK
 </footer>
+<div id="lightbox" onclick="zamknijZdjecie()">
+  <span class="zamknij">&times;</span>
+  <img id="duzeZdjecie" src="" alt="Powiększony tatuaż">
+</div>
 
+<script>
+  document.querySelectorAll('.gallery img').forEach(function(zdjecie) {
+    zdjecie.style.cursor = 'zoom-in';
+
+    zdjecie.addEventListener('click', function() {
+      document.getElementById('duzeZdjecie').src = this.src;
+      document.getElementById('lightbox').style.display = 'flex';
+    });
+  });
+
+  function zamknijZdjecie() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
 </body>
 </html>
