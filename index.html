@@ -247,18 +247,42 @@ footer {
 </div>
 
 <script>
-  document.querySelectorAll('.gallery img').forEach(function(zdjecie) {
+  const zdjecia = Array.from(document.querySelectorAll('.gallery img'));
+  let aktualneZdjecie = 0;
+
+  zdjecia.forEach(function(zdjecie, indeks) {
     zdjecie.style.cursor = 'zoom-in';
 
     zdjecie.addEventListener('click', function() {
-      document.getElementById('duzeZdjecie').src = this.src;
-      document.getElementById('lightbox').style.display = 'flex';
+      aktualneZdjecie = indeks;
+      pokazZdjecie();
     });
   });
+
+  function pokazZdjecie() {
+    document.getElementById('duzeZdjecie').src = zdjecia[aktualneZdjecie].src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
 
   function zamknijZdjecie() {
     document.getElementById('lightbox').style.display = 'none';
   }
+
+  function nastepneZdjecie() {
+    aktualneZdjecie = (aktualneZdjecie + 1) % zdjecia.length;
+    pokazZdjecie();
+  }
+
+  function poprzednieZdjecie() {
+    aktualneZdjecie = (aktualneZdjecie - 1 + zdjecia.length) % zdjecia.length;
+    pokazZdjecie();
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (document.getElementById('lightbox').style.display !== 'flex') return;
+
+    if (event.key === 'Escape') zamknijZdjecie();
+    if (event.key === 'ArrowRight') nastepneZdjecie();
+    if (event.key === 'ArrowLeft') poprzednieZdjecie();
+  });
 </script>
-</body>
-</html>
