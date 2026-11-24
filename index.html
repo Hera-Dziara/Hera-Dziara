@@ -224,19 +224,145 @@ footer {
   left: 20px;
 }
 
-.strzalka.prawa {
-  right: 20px;
-}
-
 .zamknij {
   z-index: 10001;
   background: none;
   border: none;
 }
+  #intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)),
+    url('https://raw.githubusercontent.com/Hera-Dziara/Hera-Dziara/main/hero.jpg.jpg') center/cover no-repeat;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+#intro-screen.ukryty {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-content {
+  max-width: 800px;
+  padding: 30px;
+}
+
+.intro-small {
+  color: #ccc;
+  letter-spacing: 6px;
+  font-size: 13px;
+}
+
+.intro-content h1 {
+  color: #e00030;
+  font-size: clamp(42px, 8vw, 85px);
+  letter-spacing: 5px;
+  text-shadow: 0 0 25px rgba(224,0,48,0.8);
+  margin: 15px 0 0;
+}
+
+.intro-content h2 {
+  color: white;
+  letter-spacing: 12px;
+  font-size: 22px;
+}
+
+.intro-line {
+  width: 130px;
+  height: 2px;
+  background: #c0002b;
+  margin: 30px auto;
+  box-shadow: 0 0 15px #e00030;
+}
+
+.intro-slogan {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+#intro-screen.ukryty {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-content {
+  max-width: 800px;
+  padding: 30px;
+}
+
+.intro-small {
+  color: #ccc;
+  letter-spacing: 6px;
+  font-size: 13px;
+}
+
+.intro-content h1 {
+  color: #e00030;
+  font-size: clamp(42px, 8vw, 85px);
+  letter-spacing: 5px;
+  text-shadow: 0 0 25px rgba(224,0,48,0.8);
+  margin: 15px 0 0;
+}
+
+.intro-content h2 {
+  color: white;
+  letter-spacing: 12px;
+  font-size: 22px;
+}
+
+.intro-line {
+  width: 130px;
+  height: 2px;
+  background: #c0002b;
+  margin: 30px auto;
+  box-shadow: 0 0 15px #e00030;
+}
+.intro-slogan {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.intro-content button {
+  margin-top: 35px;
+  padding: 18px 35px;
+  color: white;
+  background: linear-gradient(135deg, #8b001b, #c0002b);
+  border: 1px solid #e00030;
+  letter-spacing: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 0 15px rgba(224,0,48,0.4);
+}
+
+.intro-content button:hover {
+  background: #e00030;
+  box-shadow: 0 0 35px rgba(224,0,48,0.9);
+  transform: scale(1.06);
+}
+
 </style>
 </head>
 <body>
-
+<div id="intro-screen">
+  <div class="intro-content">
+    <p class="intro-small">WELCOME TO MY WORLD</p>
+    <h1>HERA DZIARA</h1>
+    <h2>TATTOO INK</h2>
+    <div class="intro-line"></div>
+    <p class="intro-slogan">Tatuaż to sztuka. Noś ją na zawsze.</p>
+    <button onclick="wejdzNaStrone()">WEJDŹ DO MOJEGO ŚWIATA</button>
+</div>
+</div>
 <header>
   <div>
     <h1>HERA DZIARA</h1>
@@ -305,6 +431,10 @@ footer {
 </div>
 
 <script>
+  function wejdzNaStrone() 
+  {
+  document.getElementById('intro-screen').classList.add('ukryty');
+}
   const zdjecia = Array.from(document.querySelectorAll('.gallery img'));
   let aktualneZdjecie = 0;
 
@@ -344,3 +474,5 @@ footer {
     if (event.key === 'ArrowLeft') poprzednieZdjecie();
   });
 </script>
+</body>
+</html>
