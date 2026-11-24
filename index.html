@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HERA DZIARA | Tattoo Ink</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #090909;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+header {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  background: radial-gradient(ellipse, #351010, #090909 65%);
+}
+h1 {
+  font-size: clamp(48px, 10vw, 100px);
+  letter-spacing: 8px;
+  margin: 0;
+  color: #d71920;
+  text-shadow: 0 0 25px #8d0000;
+}
+header p {
+  letter-spacing: 6px;
+  color: #ddd;
+}
+nav {
+  padding: 22px;
+  text-align: center;
+  border-bottom: 1px solid #581010;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 12px;
+  letter-spacing: 2px;
+}
+section {
+  padding: 75px 20px;
+  text-align: center;
+}
+h2 {
+  color: #e01b24;
+  letter-spacing: 4px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+.gallery div {
+  min-height: 260px;
+  border: 1px solid #671116;
+  background: #171313;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+}
+footer {
+  padding: 30px;
+  text-align: center;
+  background: #151010;
+  color: #aaa;
+}
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: 1px solid #d71920;
+  color: white;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <p>TATTOO ARTIST</p>
+  <h1>HERA DZIARA</h1>
+  <p>TATTOO INK</p>
+  <a class="button" href="#portfolio">ZOBACZ MOJE PRACE</a>
+</header>
+
+<nav>
+  <a href="#portfolio">PORTFOLIO</a>
+  <a href="#about">O MNIE</a>
+  <a href="#contact">KONTAKT</a>
+</nav>
+
+<section id="portfolio">
+  <h2>MOJE PRACE</h2>
+  <p>Każdy tatuaż ma swoją historię.</p>
+  <div class="gallery">
+    <div>Twoja praca nr 1</div>
+    <div>Twoja praca nr 2</div>
+    <div>Twoja praca nr 3</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>O MNIE</h2>
+  <p>Pasja, precyzja i sztuka zapisana na skórze.</p>
+  <p>Witaj w świecie HERA DZIARA TATTOO INK.</p>
+</section>
+
+<section id="contact">
+  <h2>SKONTAKTUJ SIĘ</h2>
+  <p>Masz pomysł na tatuaż? Napisz do mnie!</p>
+  <a class="button" href="https://www.instagram.com/">INSTAGRAM</a>
+</section>
+
+<footer>
+  HERA DZIARA TATTOO INK © 2026
+</footer>
+
+</body>
+</html>
