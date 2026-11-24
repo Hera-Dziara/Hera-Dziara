@@ -467,9 +467,10 @@ footer {
 </div>
 
 <script>
-  function wejdzNaStrone() 
-  {
-  document.getElementById('intro-screen').classList.add('ukryty');
+function wejdzNaStrone() {
+  const ekran = document.getElementById('intro-screen');
+  ekran.style.opacity = '0';
+  ekran.style.visibility = 'hidden';
 }
   const zdjecia = Array.from(document.querySelectorAll('.gallery img'));
   let aktualneZdjecie = 0;
