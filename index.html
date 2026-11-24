@@ -174,13 +174,37 @@ footer {
   box-shadow: 0 0 30px rgba(192, 0, 43, 0.5);
 }
 
-.zamknij {
+.strzalka {
   position: absolute;
-  top: 20px;
-  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(139, 0, 27, 0.85);
   color: white;
-  font-size: 45px;
+  border: 1px solid #e00030;
+  font-size: 28px;
+  padding: 15px 20px;
   cursor: pointer;
+  transition: 0.3s;
+  z-index: 10001;
+}
+
+.strzalka:hover {
+  background: #c0002b;
+  box-shadow: 0 0 20px rgba(224, 0, 48, 0.8);
+}
+
+.strzalka.lewa {
+  left: 20px;
+}
+
+.strzalka.prawa {
+  right: 20px;
+}
+
+.zamknij {
+  z-index: 10001;
+  background: none;
+  border: none;
 }
 </style>
 </head>
@@ -242,8 +266,15 @@ footer {
   © 2026 HERA DZIARA TATTOO INK
 </footer>
 <div id="lightbox" onclick="zamknijZdjecie()">
-  <span class="zamknij">&times;</span>
+
+  <button class="zamknij" onclick="event.stopPropagation(); zamknijZdjecie()">&times;</button>
+
+  <button class="strzalka lewa" onclick="event.stopPropagation(); poprzednieZdjecie()">&#10094;</button>
+
   <img id="duzeZdjecie" src="" alt="Powiększony tatuaż">
+
+  <button class="strzalka prawa" onclick="event.stopPropagation(); nastepneZdjecie()">&#10095;</button>
+
 </div>
 
 <script>
