@@ -78,19 +78,30 @@ h2 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
 }
 
 .gallery div {
-  min-height: 230px;
-  border: 1px solid #590015;
+  height: 320px;
+  overflow: hidden;
+  border: 1px solid #8b001b;
   background: #151515;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #777;
+  box-shadow: 0 0 15px rgba(180, 0, 35, 0.2);
 }
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery div:hover img {
+  transform: scale(1.06);
+}
+
 
 .contact {
   text-align: center;
@@ -138,11 +149,19 @@ footer {
 
 <section id="galeria">
   <h2>PORTFOLIO</h2>
-  <div class="gallery">
-    <div>Twoja praca nr 1</div>
-    <div>Twoja praca nr 2</div>
-    <div>Twoja praca nr 3</div>
-  </div>
+  
+<div class="gallery">
+  <div><img src="zdjecia/702564204_122099974041325468_5826390861132223528_n.jpg" alt="Tatuaż 1"></div>
+
+  <div><img src="zdjecia/702611963_122099973219325468_2273665111339356877_n.jpg" alt="Tatuaż 2"></div>
+
+  <div><img src="zdjecia/703020552_122099973021325468_7993872245887734775_n.jpg" alt="Tatuaż 3"></div>
+
+  <div><img src="zdjecia/710404055_122103300837325468_867598381792475057_n.jpg" alt="Tatuaż 4"></div>
+
+  <div><img src="zdjecia/710497588_122103300831325468_7716209693069872854_n.jpg" alt="Tatuaż 5"></div>
+</div>
+
 </section>
 
 <section id="kontakt">
