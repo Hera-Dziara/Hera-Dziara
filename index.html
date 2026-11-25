@@ -15,7 +15,27 @@ body {
   color: #eee;
   font-family: Arial, sans-serif;
 }
+/* EKRAN POWITALNY */
 
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle, #25000b 0%, #080808 65%);
+  transition: opacity 0.8s ease,
+              visibility 0.8s ease;
+}
+
+#intro-screen.ukryty {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 /* GŁÓWNY BANER HERA DZIARA */
 
 .hero {
