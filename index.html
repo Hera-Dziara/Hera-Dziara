@@ -125,7 +125,22 @@ body {
   color: #e00030;
   font-size: clamp(45px, 8vw, 100px);
   letter-spacing: 8px;
-  text-shadow: 0 0 25px #8b001b;
+  text-shadow:
+    0 0 5px #ff003c,
+    0 0 15px #e00030,
+    0 0 30px #c0002b,
+    0 0 55px #8b001b;
+  animation: neonHera 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonHera {
+  from {
+    text-shadow: 0 0 10px #e00030, 0 0 20px #c0002b;
+  }
+  to {
+    text-shadow: 0 0 20px #ff003c, 0 0 45px #e00030, 0 0 70px #8b001b;
+  }
+}
 }
 
 .hero p {
