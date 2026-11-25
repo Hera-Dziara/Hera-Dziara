@@ -7,7 +7,9 @@
 <title>HERA DZIARA | Tattoo Ink</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -15,6 +17,7 @@ body {
   color: #eee;
   font-family: Arial, sans-serif;
 }
+
 /* EKRAN POWITALNY */
 
 #intro-screen {
@@ -25,10 +28,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background:
-    radial-gradient(circle, #25000b 0%, #080808 65%);
-  transition: opacity 0.8s ease,
-              visibility 0.8s ease;
+  background: radial-gradient(circle, #25000b 0%, #080808 65%);
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 #intro-screen.ukryty {
@@ -36,12 +37,72 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
-/* GŁÓWNY BANER HERA DZIARA */
+
+.intro-content {
+  max-width: 800px;
+  padding: 30px;
+}
+
+.intro-small {
+  color: #ccc;
+  letter-spacing: 6px;
+  font-size: 13px;
+}
+
+.intro-content h1 {
+  color: #e00030;
+  font-size: clamp(42px, 8vw, 85px);
+  letter-spacing: 5px;
+  text-shadow: 0 0 25px rgba(224,0,48,0.8);
+  margin: 15px 0 0;
+}
+
+.intro-content h2 {
+  color: white;
+  letter-spacing: 12px;
+  font-size: 22px;
+}
+
+.intro-line {
+  width: 130px;
+  height: 2px;
+  background: #c0002b;
+  margin: 30px auto;
+  box-shadow: 0 0 15px #e00030;
+}
+
+.intro-slogan {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.intro-content button {
+  margin-top: 35px;
+  padding: 18px 35px;
+  color: white;
+  background: linear-gradient(135deg, #8b001b, #c0002b);
+  border: 1px solid #e00030;
+  letter-spacing: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 0 15px rgba(224,0,48,0.4);
+}
+
+.intro-content button:hover {
+  background: #e00030;
+  box-shadow: 0 0 35px rgba(224,0,48,0.9);
+  transform: scale(1.06);
+}
+
+/* GŁÓWNY BANER */
 
 .hero {
   width: 100%;
   min-height: 90vh;
-  position: relative;background-image: url("zdjecia/hera-dziara.jpg");
+  position: relative;
+  background-image: url("zdjecia/hera-dziara.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -79,13 +140,6 @@ body {
   letter-spacing: 5px;
 }
 
-header p {
-  letter-spacing: 5px;
-  font-size: 18px;
-  color: white;
-}
-/* PRZYCISK NA GŁÓWNYM BANERZE */
-
 .hero-button {
   display: inline-block;
   margin-top: 35px;
@@ -104,6 +158,9 @@ header p {
   box-shadow: 0 0 25px rgba(201, 0, 37, 0.5);
   transform: scale(1.05);
 }
+
+/* MENU */
+
 nav {
   background: #111;
   padding: 20px;
@@ -116,9 +173,14 @@ nav a {
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
+  display: inline-block;
 }
 
-nav a:hover { color: #e00030; }
+nav a:hover {
+  color: #e00030;
+}
+
+/* SEKCJE */
 
 section {
   padding: 70px 20px;
@@ -138,6 +200,8 @@ h2 {
   line-height: 1.8;
 }
 
+/* KARTY I GALERIA */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -150,25 +214,25 @@ h2 {
   border: 1px solid #8b001b;
   background: #151515;
   box-shadow: 0 0 15px rgba(180, 0, 35, 0.2);
+  animation: wejscieZdjecia 0.8s ease both;
 }
-.gallery div:hover img {
-  transform: scale(1.02);
-}
-.gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.4s ease;
-}
+
 .gallery div:hover {
   border-color: #e00030;
   box-shadow: 0 0 25px rgba(224, 0, 48, 0.55);
   transition: 0.4s ease;
 }
 
-.gallery div {
-  animation: wejscieZdjecia 0.8s ease both;
+.gallery div:hover img {
+  transform: scale(1.02);
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 .gallery div:nth-child(2) {
@@ -198,42 +262,32 @@ h2 {
   }
 }
 
+/* KROKI ZAMAWIANIA */
 
-
-.contact {
-  text-align: center;
-  line-height: 2;
-}
-
-.contact a {
-  color: #e00030;
-  text-decoration: none;
-}
-
-footer {
-  text-align: center;
+#proces .gallery div {
+  height: auto;
+  min-height: 240px;
   padding: 25px;
-  background: #111;
-  color: #777;
-  border-top: 1px solid #590015;
+  text-align: center;
 }
+
+#proces .gallery h2 {
+  font-size: 34px;
+  color: #e00030;
+}
+
+#proces .gallery h3 {
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* REZERWACJA I INSTAGRAM */
 
 .instagram-link {
   text-align: center;
   padding: 45px 20px;
 }
 
-.instagram-link a {
-  display: inline-block;
-  padding: 16px 30px;
-  color: white;
-  background: #8b001b;
-  border: 1px solid #c0002b;
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-weight: bold;
-  transition: 0.3s;
-}
 .instagram-link a {
   display: inline-block;
   padding: 18px 35px;
@@ -252,7 +306,32 @@ footer {
   box-shadow: 0 0 30px rgba(224, 0, 48, 0.8);
   background: linear-gradient(135deg, #c0002b, #ed1745);
 }
-  #lightbox {
+
+/* KONTAKT */
+
+.contact {
+  text-align: center;
+  line-height: 2;
+}
+
+.contact a {
+  color: #e00030;
+  text-decoration: none;
+}
+
+/* STOPKA */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #111;
+  color: #777;
+  border-top: 1px solid #590015;
+}
+
+/* POWIĘKSZANIE ZDJĘĆ */
+
+#lightbox {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -271,7 +350,7 @@ footer {
   box-shadow: 0 0 30px rgba(192, 0, 43, 0.5);
 }
 
-/* STRZALKI W GALERII */
+/* STRZAŁKI */
 
 .strzalka {
   position: absolute;
@@ -301,119 +380,54 @@ footer {
 }
 
 .zamknij {
+  position: absolute;
+  top: 20px;
+  right: 25px;
   z-index: 10001;
   background: none;
   border: none;
-}
-#intro-screen.ukryty {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.intro-content {
-  max-width: 800px;
-  padding: 30px;
-}
-
-.intro-small {
-  color: #ccc;
-  letter-spacing: 6px;
-  font-size: 13px;
-}
-
-.intro-content h1 {
-  color: #e00030;
-  font-size: clamp(42px, 8vw, 85px);
-  letter-spacing: 5px;
-  text-shadow: 0 0 25px rgba(224,0,48,0.8);
-  margin: 15px 0 0;
-}
-
-.intro-content h2 {
   color: white;
-  letter-spacing: 12px;
-  font-size: 22px;
-}
-
-.intro-line {
-  width: 130px;
-  height: 2px;
-  background: #c0002b;
-  margin: 30px auto;
-  box-shadow: 0 0 15px #e00030;
-}
-
-.intro-slogan {
-  color: white;
-  font-size: 18px;
-  letter-spacing: 2px;
-}
-
-#intro-screen.ukryty {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.intro-content {
-  max-width: 800px;
-  padding: 30px;
-}
-
-.intro-small {
-  color: #ccc;
-  letter-spacing: 6px;
-  font-size: 13px;
-}
-
-.intro-content h1 {
-  color: #e00030;
-  font-size: clamp(42px, 8vw, 85px);
-  letter-spacing: 5px;
-  text-shadow: 0 0 25px rgba(224,0,48,0.8);
-  margin: 15px 0 0;
-}
-
-.intro-content h2 {
-  color: white;
-  letter-spacing: 12px;
-  font-size: 22px;
-}
-
-.intro-line {
-  width: 130px;
-  height: 2px;
-  background: #c0002b;
-  margin: 30px auto;
-  box-shadow: 0 0 15px #e00030;
-}
-.intro-slogan {
-  color: white;
-  font-size: 18px;
-  letter-spacing: 2px;
-}
-
-.intro-content button {
-  margin-top: 35px;
-  padding: 18px 35px;
-  color: white;
-  background: linear-gradient(135deg, #8b001b, #c0002b);
-  border: 1px solid #e00030;
-  letter-spacing: 3px;
-  font-weight: bold;
+  font-size: 40px;
   cursor: pointer;
-  transition: 0.4s;
-  box-shadow: 0 0 15px rgba(224,0,48,0.4);
 }
 
-.intro-content button:hover {
-  background: #e00030;
-  box-shadow: 0 0 35px rgba(224,0,48,0.9);
-  transform: scale(1.06);
-}
+/* WERSJA NA TELEFONY */
 
+@media (max-width: 700px) {
+  nav {
+    padding: 15px 8px;
+  }
+
+  nav a {
+    margin: 8px;
+    font-size: 13px;
+  }
+
+  .hero p {
+    font-size: 20px;
+    letter-spacing: 6px;
+  }
+
+  .hero span {
+    letter-spacing: 2px;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
+
+  .strzalka {
+    font-size: 20px;
+    padding: 10px 13px;
+  }
+}
 </style>
 </head>
+
 <body>
+
+<!-- EKRAN POWITALNY -->
+
 <div id="intro-screen">
   <div class="intro-content">
     <p class="intro-small">WELCOME TO MY WORLD</p>
@@ -421,11 +435,14 @@ footer {
     <h2>TATTOO INK</h2>
     <div class="intro-line"></div>
     <p class="intro-slogan">Tatuaż to sztuka. Noś ją na zawsze.</p>
-  <button onclick="wejdzNaStrone()">
-  WEJDŹ DO MOJEGO ŚWIATA
-</button>
+
+    <button onclick="wejdzNaStrone()">
+      WEJDŹ DO MOJEGO ŚWIATA
+    </button>
   </div>
 </div>
+
+<!-- GŁÓWNY BANER -->
 
 <header class="hero">
   <div class="hero-overlay">
@@ -435,25 +452,35 @@ footer {
     <a href="#galeria" class="hero-button">ZOBACZ MOJE PRACE</a>
   </div>
 </header>
+
+<!-- MENU -->
+
 <nav>
   <a href="#onas">O mnie</a>
   <a href="#galeria">Portfolio</a>
   <a href="#proces">Jak zamówić?</a>
   <a href="#kontakt">Kontakt</a>
   <a href="#rezerwacja">Rezerwacja</a>
-  <a href="https://forms.kwadronapi.com/studio/hera-dziara-tattoo-ink" target="_blank">
+  <a href="https://forms.kwadronapi.com/studio/hera-dziara-tattoo-ink"
+     target="_blank" rel="noopener noreferrer">
     UMÓW SIĘ
   </a>
 </nav>
 
+<!-- O MNIE -->
+
 <section id="onas">
   <h2>MOJA PASJA. TWOJA HISTORIA.</h2>
+
   <p class="intro">
     Witaj w świecie HERA DZIARA TATTOO INK.
     Tutaj sztuka spotyka się z pasją, a każdy tatuaż
     opowiada własną historię.
   </p>
 </section>
+
+<!-- REZERWACJA -->
+
 <section id="rezerwacja" class="instagram-link">
   <h2>TWÓJ POMYSŁ. MOJA SZTUKA.</h2>
 
@@ -463,131 +490,205 @@ footer {
   </p>
 
   <a href="https://forms.kwadronapi.com/studio/hera-dziara-tattoo-ink"
-     target="_blank"
-     rel="noopener noreferrer">
-      UMÓW SIĘ NA TATUAŻ
+     target="_blank" rel="noopener noreferrer">
+    UMÓW SIĘ NA TATUAŻ
   </a>
 
-  <p style="
-    color: #888;
-    font-size: 13px;
-    margin-top: 25px;
-    letter-spacing: 1px;
-    line-height: 1.8;
-  ">
+  <p style="color:#888; font-size:13px; margin-top:25px; letter-spacing:1px; line-height:1.8;">
     Wysłanie formularza jest zgłoszeniem zainteresowania.
     Termin tatuażu zostaje potwierdzony indywidualnie
     po kontakcie ze studiem.
-   </p>
+  </p>
 
-  <p style="
-    color: #aaa;
-    font-size: 13px;
-    margin-top: 20px;
-    letter-spacing: 1px;
-    line-height: 1.8;
-  ">
+  <p style="color:#aaa; font-size:13px; margin-top:20px; letter-spacing:1px; line-height:1.8;">
     MASZ ZDJĘCIA INSPIRACJI LUB WŁASNY PROJEKT?
     Po wysłaniu formularza możesz przesłać je
     bezpośrednio na Instagram HERA DZIARA TATTOO INK.
   </p>
 
   <a href="https://www.instagram.com/heradziara_tattoo_ink_/"
-     target="_blank"
-     rel="noopener noreferrer">
+     target="_blank" rel="noopener noreferrer">
     WYŚLIJ INSPIRACJE NA INSTAGRAMIE
   </a>
-
 </section>
+
+<!-- JAK ZAMÓWIĆ -->
+
+<section id="proces">
+  <h2>JAK UMÓWIĆ SIĘ NA TATUAŻ?</h2>
+
+  <div class="gallery">
+
+    <div>
+      <h2>01</h2>
+      <h3>WYPEŁNIJ FORMULARZ</h3>
+      <p class="intro">
+        Opowiedz mi o swoim pomyśle na tatuaż
+        poprzez formularz Kwadron.
+      </p>
+    </div>
+
+    <div>
+      <h2>02</h2>
+      <h3>OMAWIAMY PROJEKT</h3>
+      <p class="intro">
+        Skontaktuję się z Tobą, aby omówić
+        szczegóły i inspiracje.
+      </p>
+    </div>
+
+    <div>
+      <h2>03</h2>
+      <h3>USTALAMY TERMIN</h3>
+      <p class="intro">
+        Po ustaleniu szczegółów potwierdzimy
+        termin Twojej sesji.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
 <section id="galeria">
   <h2>PORTFOLIO</h2>
-  
-<div class="gallery">
-  <div><img src="zdjecia/702564204_122099974041325468_5826390861132223528_n.jpg" alt="Tatuaż 1"></div>
 
-  <div><img src="zdjecia/702611963_122099973219325468_2273665111339356877_n.jpg" alt="Tatuaż 2"></div>
+  <div class="gallery">
 
-  <div><img src="zdjecia/703020552_122099973021325468_7993872245887734775_n.jpg" alt="Tatuaż 3"></div>
+    <div>
+      <img src="zdjecia/702564204_122099974041325468_5826390861132223528_n.jpg"
+           alt="Tatuaż 1">
+    </div>
 
-  <div><img src="zdjecia/710404055_122103300837325468_867598381792475057_n.jpg" alt="Tatuaż 4"></div>
+    <div>
+      <img src="zdjecia/702611963_122099973219325468_2273665111339356877_n.jpg"
+           alt="Tatuaż 2">
+    </div>
 
-  <div><img src="zdjecia/710497588_122103300831325468_7716209693069872854_n.jpg" alt="Tatuaż 5"></div>
-</div>
+    <div>
+      <img src="zdjecia/703020552_122099973021325468_7993872245887734775_n.jpg"
+           alt="Tatuaż 3">
+    </div>
 
+    <div>
+      <img src="zdjecia/710404055_122103300837325468_867598381792475057_n.jpg"
+           alt="Tatuaż 4">
+    </div>
+
+    <div>
+      <img src="zdjecia/710497588_122103300831325468_7716209693069872854_n.jpg"
+           alt="Tatuaż 5">
+    </div>
+
+  </div>
 </section>
+
+<!-- KONTAKT -->
 
 <section id="kontakt">
   <h2>SKONTAKTUJ SIĘ</h2>
+
   <div class="contact">
     <p>HERA DZIARA TATTOO INK</p>
     <p>Zapraszam do kontaktu w sprawie tatuaży.</p>
     <p>Znajdziesz mnie również w mediach społecznościowych.</p>
   </div>
 </section>
+
+<!-- INSTAGRAM -->
+
 <div class="instagram-link">
-  <a href="https://www.instagram.com/heradziara_tattoo_ink_/" target="_blank">
+  <a href="https://www.instagram.com/heradziara_tattoo_ink_/"
+     target="_blank" rel="noopener noreferrer">
     ZOBACZ MOJE PRACE NA INSTAGRAMIE
   </a>
 </div>
+
+<!-- STOPKA -->
+
 <footer>
   © 2026 HERA DZIARA TATTOO INK
 </footer>
+
+<!-- LIGHTBOX -->
+
 <div id="lightbox" onclick="zamknijZdjecie()">
 
-  <button class="zamknij" onclick="event.stopPropagation(); zamknijZdjecie()">&times;</button>
+  <button class="zamknij"
+          onclick="event.stopPropagation(); zamknijZdjecie()">
+    &times;
+  </button>
 
-  <button class="strzalka lewa" onclick="event.stopPropagation(); poprzednieZdjecie()">&#10094;</button>
+  <button class="strzalka lewa"
+          onclick="event.stopPropagation(); poprzednieZdjecie()">
+    &#10094;
+  </button>
 
   <img id="duzeZdjecie" src="" alt="Powiększony tatuaż">
 
-  <button class="strzalka prawa" onclick="event.stopPropagation(); nastepneZdjecie()">&#10095;</button>
+  <button class="strzalka prawa"
+          onclick="event.stopPropagation(); nastepneZdjecie()">
+    &#10095;
+  </button>
 
 </div>
 
 <script>
+/* WEJŚCIE NA STRONĘ */
+
 function wejdzNaStrone() {
   const ekran = document.getElementById('intro-screen');
-  ekran.style.opacity = '0';
-  ekran.style.visibility = 'hidden';
+  ekran.classList.add('ukryty');
 }
-  const zdjecia = Array.from(document.querySelectorAll('.gallery img'));
-  let aktualneZdjecie = 0;
 
-  zdjecia.forEach(function(zdjecie, indeks) {
-    zdjecie.style.cursor = 'zoom-in';
+/* GALERIA I POWIĘKSZANIE ZDJĘĆ */
 
-    zdjecie.addEventListener('click', function() {
-      aktualneZdjecie = indeks;
-      pokazZdjecie();
-    });
-  });
+const zdjecia = Array.from(document.querySelectorAll('.gallery img'));
+let aktualneZdjecie = 0;
 
-  function pokazZdjecie() {
-    document.getElementById('duzeZdjecie').src = zdjecia[aktualneZdjecie].src;
-    document.getElementById('lightbox').style.display = 'flex';
-  }
+zdjecia.forEach(function(zdjecie, indeks) {
+  zdjecie.style.cursor = 'zoom-in';
 
-  function zamknijZdjecie() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-
-  function nastepneZdjecie() {
-    aktualneZdjecie = (aktualneZdjecie + 1) % zdjecia.length;
+  zdjecie.addEventListener('click', function() {
+    aktualneZdjecie = indeks;
     pokazZdjecie();
-  }
-
-  function poprzednieZdjecie() {
-    aktualneZdjecie = (aktualneZdjecie - 1 + zdjecia.length) % zdjecia.length;
-    pokazZdjecie();
-  }
-
-  document.addEventListener('keydown', function(event) {
-    if (document.getElementById('lightbox').style.display !== 'flex') return;
-
-    if (event.key === 'Escape') zamknijZdjecie();
-    if (event.key === 'ArrowRight') nastepneZdjecie();
-    if (event.key === 'ArrowLeft') poprzednieZdjecie();
   });
+});
+
+function pokazZdjecie() {
+  document.getElementById('duzeZdjecie').src =
+    zdjecia[aktualneZdjecie].src;
+
+  document.getElementById('lightbox').style.display = 'flex';
+}
+
+function zamknijZdjecie() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+function nastepneZdjecie() {
+  aktualneZdjecie = (aktualneZdjecie + 1) % zdjecia.length;
+  pokazZdjecie();
+}
+
+function poprzednieZdjecie() {
+  aktualneZdjecie =
+    (aktualneZdjecie - 1 + zdjecia.length) % zdjecia.length;
+
+  pokazZdjecie();
+}
+
+/* OBSŁUGA KLAWIATURY */
+
+document.addEventListener('keydown', function(event) {
+  if (document.getElementById('lightbox').style.display !== 'flex') return;
+
+  if (event.key === 'Escape') zamknijZdjecie();
+  if (event.key === 'ArrowRight') nastepneZdjecie();
+  if (event.key === 'ArrowLeft') poprzednieZdjecie();
+});
 </script>
+
 </body>
 </html>
